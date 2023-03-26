@@ -83,18 +83,43 @@ let movieData = {
       movie3.innerText = ('Mr Fox' + ul3);
     });
 
- //the user add the movie of their choice
+ //the user adds the movie of their choice
   var button = document.getElementById('addMovie');
   var input = document.getElementById('userInput');
   var body = document.querySelector('body');
-  button.addEventListener('click', function(){
-    var para= document.createElement('p');
+  button.addEventListener('click', function(event){
+    if (input.value != ''){
+    var para= document.createElement('para');
+    var delButton = document.createElement('button');
+    delButton.innerText= 'Delete';
     para.appendChild(document.createTextNode(input.value));
     body.appendChild(para);
+    para.appendChild(delButton);
+    //when the user clicks the delButton, the movie dissapears 
+    delButton.addEventListener("click", function () {
+      console.log('works');
+        para.parentNode.removeChild(para);
+      });
+  }
   })
 
-    
-    
+  //the user adds their movie of their choice by pressing 'enter'
+  input.addEventListener('keypress', function(event){
+    if (input.value != '' && event.keyCode ===13){
+    var para= document.createElement('para');
+    var delButton = document.createElement('button');
+    delButton.innerText= 'Delete';
+    para.appendChild(document.createTextNode(input.value));
+    body.appendChild(para);
+    para.appendChild(delButton); 
+    //when the user clicks the delButton, the movie dissapears 
+    delButton.addEventListener("click", function () {
+      console.log('works');
+        para.parentNode.removeChild(para);
+      });
+  }    
+  })
+
     
     
     

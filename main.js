@@ -15,7 +15,7 @@ let movieData = {
       
       rating: 7.6,
       cast: ["Gene Hackman", "Gwnyeth Paltrow", "Anjelica Huston"],
-      runtime: 170,
+      runtime: 160,
     },
     "Fantastic Mr. Fox": {
       year: 2009,
